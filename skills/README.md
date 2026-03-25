@@ -16,3 +16,8 @@ Examples:
 These skills should provide the action layer between the optimization agent and the CUDA task workspace.
 
 See [`skills/CONTRACT.md`](/home/yuwei/Documents/Spiny-Claw/skills/CONTRACT.md) for the first minimum interface definition.
+
+Current workspace skills:
+
+- [`skills/local-compile-checks/SKILL.md`](/home/yuwei/Documents/Spiny-Claw/skills/local-compile-checks/SKILL.md)
+  OpenClaw skill for local CUDA preflight checks against `kernel.cu` and `binding.py`.
