@@ -21,3 +21,7 @@ Current workspace skills:
 
 - [`skills/local-compile-checks/SKILL.md`](/home/yuwei/Documents/Spiny-Claw/skills/local-compile-checks/SKILL.md)
   OpenClaw skill for local CUDA preflight checks against `kernel.cu` and `binding.py`.
+- [`skills/run-modal-eval/SKILL.md`](/home/yuwei/Documents/Spiny-Claw/skills/run-modal-eval/SKILL.md)
+  OpenClaw skill for running a task on Modal and evaluating workload-level benchmark and correctness output.
+- [`skills/debug-instrumentation/SKILL.md`](/home/yuwei/Documents/Spiny-Claw/skills/debug-instrumentation/SKILL.md)
+  OpenClaw guide skill for temporarily instrumenting `kernel.cu` or `binding.py` when workload-level benchmark output is too coarse to explain a bottleneck.

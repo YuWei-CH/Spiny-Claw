@@ -97,6 +97,10 @@ Notes:
 
 - this is the main remote execution entry point
 - benchmark should run on Modal rather than locally
+- current workspace implementation lives at [`skills/run-modal-eval/SKILL.md`](/home/yuwei/Documents/Spiny-Claw/skills/run-modal-eval/SKILL.md)
+- this implementation writes `results/<task-name>/benchmark_result/` and produces heuristic performance and accuracy assessments from the Modal output
+- full runs may take a long time, and current containerized output may appear in a batch rather than as smoothly streamed progress
+- this implementation now supports selecting specific workload IDs, not just `--max-workloads`
 
 ### `run_timer`
 
@@ -118,6 +122,33 @@ Notes:
 
 - this is currently in scope
 - it should teach OpenClaw how to time code in a repeatable way
+- it should primarily measure workload-level timing and record the corresponding workload or input-size context
+- it should prefer clean external timing before any code instrumentation is introduced
+
+### `debug_instrumentation`
+
+Purpose: guide OpenClaw to add temporary timing or debug instrumentation to `kernel.cu` or `binding.py` when workload-level benchmark data is too coarse to localize a bottleneck.
+
+Expected inputs:
+
+- task path
+- target workload IDs
+- suspected slow region or debug objective
+- instrumentation scope
+
+Expected outputs:
+
+- instrumentation plan
+- structured timing or debug artifacts
+- a next-action recommendation for the next patch
+
+Notes:
+
+- this is a guide skill in the current workspace, not a bundled execution script
+- it should be used only after compile or binding failures are ruled out
+- it should prefer narrow, workload-scoped, temporary instrumentation
+- it should store artifacts under `results/<task-name>/benchmark_result/timing_debug/`
+- current workspace implementation lives at [`skills/debug-instrumentation/SKILL.md`](/home/yuwei/Documents/Spiny-Claw/skills/debug-instrumentation/SKILL.md)
 
 ## Future Skills
 
